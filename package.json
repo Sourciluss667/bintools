@@ -13,7 +13,7 @@
     {
       "name": "index",
       "title": "Bin Tools",
-      "subtitle": "Binary Tools.",
+      "subtitle": "Convert",
       "description": "Convert decimal to hex, bin and count number of bits required to make this number.",
       "mode": "view"
     }
