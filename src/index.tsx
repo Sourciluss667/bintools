@@ -24,16 +24,20 @@ export default function Command() {
       result.decimal = parseInt(result.binary, 2);
       result.hexadecimal = result.decimal.toString(16);
     } else if (isText) {
-      result.hexadecimal = searchText.split('').map(char => char.charCodeAt(0).toString(16)).join('');
+      result.hexadecimal = searchText
+        .split("")
+        .map((char) => char.charCodeAt(0).toString(16))
+        .join("");
       result.decimal = parseInt(result.hexadecimal, 16);
       result.binary = result.decimal.toString(2);
     }
 
     if (result.hexadecimal) {
-      result.charCode = result.hexadecimal
-        .match(/.{1,2}/g)
-        ?.map(hex => String.fromCharCode(parseInt(hex, 16)))
-        .join('') || '🫥';
+      result.charCode =
+        result.hexadecimal
+          .match(/.{1,2}/g)
+          ?.map((hex) => String.fromCharCode(parseInt(hex, 16)))
+          .join("") || "🫥";
     }
 
     if (result.binary) {
@@ -102,7 +106,9 @@ export default function Command() {
           </ActionPanel>
         }
       />
-      <List.Item icon={{ source: Icon.Code, tintColor: { light: "white", dark: "white" } }} title={"Nombre de bits : " + bitsCount} 
+      <List.Item
+        icon={{ source: Icon.Code, tintColor: { light: "white", dark: "white" } }}
+        title={"Nombre de bits : " + bitsCount}
         actions={
           <ActionPanel>
             <ActionPanel.Section>
@@ -111,7 +117,9 @@ export default function Command() {
           </ActionPanel>
         }
       />
-      <List.Item icon={{ source: Icon.TextInput, tintColor: { light: "white", dark: "white" } }} title={"CharCode : " + charCode} 
+      <List.Item
+        icon={{ source: Icon.TextInput, tintColor: { light: "white", dark: "white" } }}
+        title={"CharCode : " + charCode}
         actions={
           <ActionPanel>
             <ActionPanel.Section>
